@@ -8,8 +8,10 @@ th{
 }
  
 img{
-	width: 100%;
-	margin-bottom: 10px;
+	width: 100%; /* Membuat gambar mengisi seluruh container */
+    height: 100%; /* Membuat gambar mengisi seluruh container */
+    object-fit: cover; /* Memastikan gambar menutupi area tanpa terdistorsi */
+    border-radius: 80%; /* Ini penting untuk memastikan gambar itu sendiri bulat */
 }
  
 .kotak{
@@ -21,7 +23,7 @@ img{
  
 .judul{
 	text-align: center;
-        background: yellow;
+        background: rgb(0, 96, 221);
 }
  
 .blok{
