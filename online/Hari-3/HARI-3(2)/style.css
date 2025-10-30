@@ -3,6 +3,13 @@ body{
 	font-size: 13pt;
 }
 
+ .navigasi ul {
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	gap: 100px;
+}
+
 th{
 	text-align: left;
 }
