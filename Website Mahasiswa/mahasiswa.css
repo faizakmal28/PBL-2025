@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4; /* Warna latar belakang umum */
+    color: #333;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #5e53ff; /* Latar belakang putih seperti di gambar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 70px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1em;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #ffffff;
+}
+
+.btn-login {
+    background-color: #fffb08; /* Warna tombol login */
+    color: rgb(0, 0, 0) !important;
+    border-radius: 5px;
+    padding: 8px 15px !important;
+}
+
+.btn-login:hover {
+    background-color: #003366;
+    color: white !important;
+}
+
+.hero-section {
+    position: relative;
+    background-color: #ffffff; /* Latar belakang putih untuk bagian ini */
+    /* Mungkin tambahkan sedikit padding atas/bawah jika perlu */
+}
+
+.hero-content {
+    display: flex;
+    /* Atur align-items ke flex-start agar konten gambar dan teks sejajar di atas */
+    align-items: flex-start; 
+    padding: 50px 50px 0 50px; /* Padding di sekitar konten */
+    min-height: 500px; /* Tinggi minimum untuk area hero */
+    overflow: hidden; /* Penting untuk gambar yang keluar area */
+}
+
+.hero-image {
+    position: absolute; /* Atur posisi gambar secara absolut */
+    top: 50px; /* Sesuaikan posisi vertikal */
+    left: 50px; /* Sesuaikan posisi horizontal */
+    z-index: 1; /* Pastikan gambar berada di atas background tapi di bawah teks */
+    /* Untuk tampilan yang seperti di gambar, gambar harus "keluar" dari kotaknya */
+}
+
+.hero-image img {
+    /* Asumsi gambar siswa berlatar transparan atau gelap */
+    max-width: 700px; /* Sesuaikan ukuran gambar */
+    height: auto;
+    display: block;
+}
+
+.hero-text {
+    flex-grow: 1;
+    text-align: right;
+    padding-left: 500px; /* Beri ruang agar teks tidak tertimpa gambar */
+    z-index: 2; /* Pastikan teks di atas gambar */
+}
+
+.hero-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.hero-text .quote {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.hero-text .school-name {
+    font-weight: 500;
+    color: #666;
+}
+
+/* Data Siswa Section (Bagian bawah hero) */
+
+.data-siswa {
+    /* Buat warna latar belakang sedikit berbeda dari hero di atas */
+    background-color: #f0f0f0; 
+    padding: 30px 50px;
+    margin-top: -100px; /* Tarik ke atas agar menutupi sebagian bawah hero dan gambar */
+    position: relative;
+    z-index: 0; /* Pastikan di bawah hero-image jika ada overlap */
+    /* Tambahkan garis pemisah di atas jika ingin lebih mirip */
+    border-top: 5px solid #b0d8ff; 
+}
+
+.data-siswa h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.data-siswa p {
+    color: #555;
+}
+
+/* Media Queries untuk Responsif */
+
+@media (max-width: 900px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .navbar nav {
+        display: none; /* Sembunyikan menu pada layar kecil, biasanya diganti dengan menu hamburger */
+    }
+
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px 20px 0 20px;
+        min-height: auto;
+    }
+
+    .hero-image {
+        position: static; /* Hilangkan posisi absolut pada layar kecil */
+        margin-bottom: 20px;
+    }
+
+    .hero-image img {
+        max-width: 80%;
+    }
+
+    .hero-text {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2em;
+    }
+
+    data-siswa {
+        margin-top: 20px;
+        padding: 20px;
+        text-align: center;
+    }
+}
